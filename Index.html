@@ -520,6 +520,19 @@ footer {
 
 @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
 
+@media (max-width: 900px) {
+  nav { padding: 1rem 1.5rem; }
+  nav ul { display: none; }
+  section, #hero { padding: 5rem 1.5rem; }
+  .about-grid, .skills-layout, .proj-grid, .edu-grid { grid-template-columns: 1fr; }
+  .proj-card.big { grid-column: span 1; grid-template-columns: 1fr; }
+  .hero-stats { flex-wrap: wrap; gap: 1.5rem; }
+  footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  .fw { display: none; }
+  body { cursor: auto; }
+  #cursor, #cursor-ring { display: none; }
+}
+
 /* LOADER DOTS */
 .loader-dot {
   width: 10px; height: 10px; border-radius: 50%;
@@ -535,19 +548,6 @@ footer {
 @keyframes borderGlow {
   0%,100% { box-shadow: 0 0 60px rgba(0,212,255,0.12), 0 0 100px rgba(124,58,237,0.08); }
   50% { box-shadow: 0 0 80px rgba(0,212,255,0.22), 0 0 130px rgba(124,58,237,0.15); }
-}
-
-@media (max-width: 900px) {
-  nav { padding: 1rem 1.5rem; }
-  nav ul { display: none; }
-  section, #hero { padding: 5rem 1.5rem; }
-  .about-grid, .skills-layout, .proj-grid, .edu-grid { grid-template-columns: 1fr; }
-  .proj-card.big { grid-column: span 1; grid-template-columns: 1fr; }
-  .hero-stats { flex-wrap: wrap; gap: 1.5rem; }
-  footer { flex-direction: column; gap: 0.5rem; text-align: center; }
-  .fw { display: none; }
-  body { cursor: auto; }
-  #cursor, #cursor-ring { display: none; }
 }
 </style>
 </head>
@@ -648,7 +648,7 @@ footer {
       <div class="info-card rev d3"><div class="ic">📊</div><div class="lbl">Specialization</div><div class="val">Business Analytics</div></div>
       <div class="info-card rev d4"><div class="ic">🏆</div><div class="lbl">GPA</div><div class="val">4.00 / 4.00</div></div>
       <div class="info-card rev d5"><div class="ic">🎯</div><div class="lbl">Target Roles</div><div class="val">Data & Finance Analytics</div></div>
-      <div class="info-card rev d1"><div class="ic">✉️</div><div class="lbl">Email</div><div class="val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="07696e756a6e7329776673626b477766646229626372">[email&#160;protected]</a></div></div>
+      <div class="info-card rev d1"><div class="ic">✉️</div><div class="lbl">Email</div><div class="val">nirmit.patel@pace.edu</div></div>
     </div>
   </div>
 </section>
@@ -764,6 +764,7 @@ footer {
       </div>
     </div>
 
+  </div>
     <!-- Risk Analyzer Card -->
     <div class="proj-card big rev" style="margin-top:1.5rem; grid-column: span 2; display:grid; grid-template-columns: 1.2fr 1fr; gap:2.5rem; align-items:start;">
       <div>
@@ -874,6 +875,77 @@ footer {
   </div>
 </section>
 
+
+<!-- LIVE APP -->
+<section id="live-app" style="background:var(--bg);padding:7rem 4rem;">
+  <div class="sec-label">Live Demo</div>
+  <h2 class="rev">Stock Portfolio Risk Analyzer</h2>
+  <p class="sec-desc rev">Try the live app below — enter any stock tickers, set weights, and get instant quantitative risk metrics, Monte Carlo simulations, and Markowitz efficient frontier.</p>
+
+  <!-- App feature badges -->
+  <div class="rev" style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:2rem;">
+    <span style="background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.2);color:var(--accent);font-size:0.75rem;font-weight:600;padding:0.3rem 0.8rem;border-radius:100px;">📊 VaR & CVaR</span>
+    <span style="background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.2);color:#a78bfa;font-size:0.75rem;font-weight:600;padding:0.3rem 0.8rem;border-radius:100px;">📈 Efficient Frontier</span>
+    <span style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);color:var(--accent3);font-size:0.75rem;font-weight:600;padding:0.3rem 0.8rem;border-radius:100px;">🎲 Monte Carlo</span>
+    <span style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);color:#fbbf24;font-size:0.75rem;font-weight:600;padding:0.3rem 0.8rem;border-radius:100px;">⚡ Sharpe & Sortino</span>
+    <span style="background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.2);color:var(--accent);font-size:0.75rem;font-weight:600;padding:0.3rem 0.8rem;border-radius:100px;">🔗 Live Market Data</span>
+  </div>
+
+  <!-- Embedded App -->
+  <div class="rev" style="position:relative;">
+    <!-- Glow border wrapper -->
+    <div style="
+      position:relative;
+      border-radius:20px;
+      padding:2px;
+      background:linear-gradient(135deg, rgba(0,212,255,0.4), rgba(124,58,237,0.4), rgba(16,185,129,0.3));
+      box-shadow: 0 0 60px rgba(0,212,255,0.12), 0 0 100px rgba(124,58,237,0.08);
+      animation: borderGlow 4s ease-in-out infinite;
+    ">
+      <!-- Loading overlay -->
+      <div id="app-loader" style="
+        position:absolute; inset:2px; border-radius:18px;
+        background:var(--card); display:flex; flex-direction:column;
+        align-items:center; justify-content:center; z-index:10;
+        gap:1rem;
+      ">
+        <div style="display:flex;gap:6px;align-items:center;">
+          <div class="loader-dot" style="animation-delay:0s;"></div>
+          <div class="loader-dot" style="animation-delay:0.15s;"></div>
+          <div class="loader-dot" style="animation-delay:0.3s;"></div>
+        </div>
+        <div style="font-family:'Syne',sans-serif;font-size:0.9rem;color:var(--muted);letter-spacing:0.04em;">Loading Risk Analyzer App...</div>
+        <div style="font-size:0.75rem;color:var(--muted);opacity:0.6;">Powered by Streamlit · Python · yfinance</div>
+      </div>
+      <iframe
+        id="risk-app-frame"
+        src="https://portfolio-risk-analyzer-hph4chesvpzebkpyc6igud.streamlit.app/?embed=true"
+        style="
+          width:100%; height:750px;
+          border:none; border-radius:18px;
+          background:var(--card); display:block;
+        "
+        onload="document.getElementById('app-loader').style.display='none';"
+        allow="fullscreen"
+      ></iframe>
+    </div>
+
+    <!-- Open in new tab button -->
+    <div style="text-align:center;margin-top:1.5rem;">
+      <a href="https://portfolio-risk-analyzer-hph4chesvpzebkpyc6igud.streamlit.app/" target="_blank" class="btn-primary" style="display:inline-flex;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        Open Full Screen App
+      </a>
+      &nbsp;&nbsp;
+      <a href="https://github.com/Nirmitpatel889/portfolio-risk-analyzer" target="_blank" class="btn-ghost" style="display:inline-flex;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+        View Source Code
+      </a>
+    </div>
+  </div>
+</section>
+
+
 <!-- EXPERIENCE -->
 <section id="experience">
   <div class="sec-label">Experience</div>
@@ -959,9 +1031,9 @@ footer {
   <p class="contact-sub rev">Actively seeking Summer 2026 internships in data analytics, business intelligence, and finance analytics.</p>
   <div class="avail-wrap rev"><div class="avail-badge"><div class="avail-dot"></div>Available for Summer 2026</div></div>
   <div class="contact-links rev">
-    <a href="/cdn-cgi/l/email-protection#abc5c2d9c6c2df85dbcadfcec7ebdbcac8ce85cecfde" class="clink">
+    <a href="mailto:nirmit.patel@pace.edu" class="clink">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      <span class="__cf_email__" data-cfemail="1876716a75716c3668796c7d745868797b7d367d7c6d">[email&#160;protected]</span>
+      nirmit.patel@pace.edu
     </a>
     <a href="https://www.linkedin.com/in/nirmitpatel23" target="_blank" class="clink">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
@@ -979,7 +1051,7 @@ footer {
   <div>Harrison, NJ · Open to Summer 2026 Internships</div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 /* CUSTOM CURSOR */
 const cur = document.getElementById('cursor');
 const ring = document.getElementById('cursor-ring');
@@ -1092,3 +1164,14 @@ document.querySelectorAll('.proj-card').forEach(card => {
 });
 
 /* NAV HIGHLIGHT */
+
+const secs = document.querySelectorAll('section[id]');
+const nls = document.querySelectorAll('nav ul a:not(.nav-cta)');
+window.addEventListener('scroll', () => {
+  let cur='';
+  secs.forEach(s => { if(scrollY >= s.offsetTop-130) cur=s.id; });
+  nls.forEach(a => { a.style.color = a.getAttribute('href')==='#'+cur ? 'var(--accent)' : ''; });
+});
+</script>
+</body>
+</html>
