@@ -566,6 +566,7 @@ footer {
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#live-app">Live App</a></li>
+    <li><a href="#mta-app">MTA Project</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#contact" class="nav-cta">Hire Me</a></li>
@@ -803,6 +804,43 @@ footer {
       </div>
     </div>
 
+    <!-- MTA Express Lane Card -->
+    <div class="proj-card big rev" style="margin-top:1.5rem; grid-column: span 2; display:grid; grid-template-columns: 1.2fr 1fr; gap:2.5rem; align-items:start;">
+      <div>
+        <span class="proj-badge" style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);color:var(--accent3);">🚦 Live App · Transportation Analytics</span>
+        <h3>The Express Lane — MTA Bridges &amp; Tunnels Traffic Forecasting</h3>
+        <p>End-to-end traffic forecasting platform built for the MTA Bridges &amp; Tunnels data analytics competition. Predicts vehicle volumes across nine MTA crossings using XGBoost on multi-year toll data, paired with an interactive Leaflet/React GPS map for live facility tracking.</p>
+        <ul class="proj-pts">
+          <li>XGBoost regression models trained on historical traffic across 9 MTA facilities</li>
+          <li>Hour-by-hour and day-of-week traffic forecasts with confidence intervals</li>
+          <li>Interactive Leaflet/React map showing real-time facility locations &amp; status</li>
+          <li>Custom feature engineering — holidays, peak hours, weather context, seasonality</li>
+          <li>Production-deployed full-stack dashboard accessible to non-technical stakeholders</li>
+        </ul>
+        <div class="proj-tech" style="margin-bottom:1rem;">
+          <span class="pt">XGBoost</span><span class="pt">Python</span><span class="pt">React</span>
+          <span class="pt">Leaflet</span><span class="pt">Flask</span><span class="pt">Pandas</span>
+          <span class="pt">Time Series</span><span class="pt">Feature Engineering</span><span class="pt">Render</span>
+        </div>
+        <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
+          <a href="https://mta-traffic-dashboard.onrender.com/" target="_blank" class="btn-primary" style="font-size:0.82rem;padding:0.65rem 1.3rem;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Launch Live App
+          </a>
+          <a href="#mta-app" class="btn-ghost" style="font-size:0.82rem;padding:0.65rem 1.3rem;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Try Below
+          </a>
+        </div>
+      </div>
+      <div class="metrics">
+        <div class="metric-box"><span class="mnum g">9</span><div class="mlbl">MTA Facilities Covered</div></div>
+        <div class="metric-box"><span class="mnum">XGBoost</span><div class="mlbl">Forecasting Engine</div></div>
+        <div class="metric-box"><span class="mnum p">React</span><div class="mlbl">+ Leaflet GPS Map</div></div>
+        <div class="metric-box"><span class="mnum" style="color:#fbbf24;">Live</span><div class="mlbl">Production Deployed</div></div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -945,6 +983,74 @@ footer {
   </div>
 </section>
 
+
+<!-- MTA LIVE APP -->
+<section id="mta-app" style="background:var(--bg2);padding:7rem 4rem;">
+  <div class="sec-label">Live Demo</div>
+  <h2 class="rev">The Express Lane — MTA Traffic Dashboard</h2>
+  <p class="sec-desc rev">Interactive traffic forecasting platform built for the MTA Bridges &amp; Tunnels data analytics competition — explore live XGBoost forecasts and the GPS-tracked facility map below.</p>
+
+  <!-- App feature badges -->
+  <div class="rev" style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:2rem;">
+    <span style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);color:var(--accent3);font-size:0.75rem;font-weight:600;padding:0.3rem 0.8rem;border-radius:100px;">🚦 9 MTA Crossings</span>
+    <span style="background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.2);color:var(--accent);font-size:0.75rem;font-weight:600;padding:0.3rem 0.8rem;border-radius:100px;">🤖 XGBoost Forecasts</span>
+    <span style="background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.2);color:#a78bfa;font-size:0.75rem;font-weight:600;padding:0.3rem 0.8rem;border-radius:100px;">🗺️ Leaflet GPS Map</span>
+    <span style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);color:#fbbf24;font-size:0.75rem;font-weight:600;padding:0.3rem 0.8rem;border-radius:100px;">⚛️ React Frontend</span>
+    <span style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);color:var(--accent3);font-size:0.75rem;font-weight:600;padding:0.3rem 0.8rem;border-radius:100px;">📈 Real-Time Analytics</span>
+  </div>
+
+  <!-- First-load notice for Render free tier -->
+  <p class="rev" style="font-size:0.78rem;color:var(--muted);margin-bottom:1.2rem;font-style:italic;">⏱️ Hosted on Render's free tier — first load may take 30–60 seconds while the server wakes up. Use the "Open Full Screen App" button below if the embed doesn't load.</p>
+
+  <!-- Embedded App -->
+  <div class="rev" style="position:relative;">
+    <!-- Glow border wrapper -->
+    <div style="
+      position:relative;
+      border-radius:20px;
+      padding:2px;
+      background:linear-gradient(135deg, rgba(16,185,129,0.4), rgba(0,212,255,0.4), rgba(124,58,237,0.3));
+      box-shadow: 0 0 60px rgba(16,185,129,0.12), 0 0 100px rgba(0,212,255,0.08);
+      animation: borderGlow 4s ease-in-out infinite;
+    ">
+      <!-- Loading overlay -->
+      <div id="mta-app-loader" style="
+        position:absolute; inset:2px; border-radius:18px;
+        background:var(--card); display:flex; flex-direction:column;
+        align-items:center; justify-content:center; z-index:10;
+        gap:1rem;
+      ">
+        <div style="display:flex;gap:6px;align-items:center;">
+          <div class="loader-dot" style="animation-delay:0s;background:var(--accent3);"></div>
+          <div class="loader-dot" style="animation-delay:0.15s;background:var(--accent3);"></div>
+          <div class="loader-dot" style="animation-delay:0.3s;background:var(--accent3);"></div>
+        </div>
+        <div style="font-family:'Syne',sans-serif;font-size:0.9rem;color:var(--muted);letter-spacing:0.04em;">Loading MTA Traffic Dashboard...</div>
+        <div style="font-size:0.75rem;color:var(--muted);opacity:0.6;">Powered by React · XGBoost · Leaflet · Flask</div>
+        <div style="font-size:0.7rem;color:var(--muted);opacity:0.5;margin-top:0.4rem;">First load may take up to a minute — server waking up</div>
+      </div>
+      <iframe
+        id="mta-app-frame"
+        src="https://mta-traffic-dashboard.onrender.com/"
+        style="
+          width:100%; height:750px;
+          border:none; border-radius:18px;
+          background:var(--card); display:block;
+        "
+        onload="document.getElementById('mta-app-loader').style.display='none';"
+        allow="fullscreen"
+      ></iframe>
+    </div>
+
+    <!-- Open in new tab button -->
+    <div style="text-align:center;margin-top:1.5rem;">
+      <a href="https://mta-traffic-dashboard.onrender.com/" target="_blank" class="btn-primary" style="display:inline-flex;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        Open Full Screen App
+      </a>
+    </div>
+  </div>
+</section>
 
 <!-- EXPERIENCE -->
 <section id="experience">
